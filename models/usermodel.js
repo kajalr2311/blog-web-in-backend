@@ -1,8 +1,10 @@
-const mongoose =require("mongoose")
-.connect("mongodb+srv://Lodhi_kajal:04iLX3Wnplmdypjl@cluster0.zf9mge5.mongodb.net/blogapp")
-.then(() => {
-    console.log("Database connected");
-    
-}).catch((err) => {
-    console.log(err.message);
-});
+const mongoose = require("mongoose")
+
+exports.connect = async () => {
+    try {
+        const conn = await mongoose.connect(process.env.MONGO_URI);
+        console.log(`MongoDB Connected: ${conn.connection.host}`);
+    } catch (error) {
+        console.log(error.message);
+    }
+};

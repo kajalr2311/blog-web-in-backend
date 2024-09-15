@@ -1,0 +1,23 @@
+<%- include('partials/header')%>
+  <!--  -->
+  <%- include('partials/nav')%>
+    <!--  -->
+  <div class=" w-[40%] h-[80vh] bg-zinc-200 mx-auto flex p-10  ">
+    <div class="img object-cover ">
+        <img class="w-[10vw] h-[20vh] object-cover rounded-full " src="https://images.unsplash.com/photo-1516575150278-77136aed6920?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    <h6 class="text-blue-900">Edit picture or avatar</h6>
+    </div>
+    <div class="detalis w-[80%] h-[100%] ">
+        <form class="flex gap-5 flex-col w-1/2 py-10 px-5 text-black"  action="/details" method="post">
+            <h1 class="text-3xl font-bold w-max">Edit Profile</h1>
+        <input class="w-max mb-2 border p-2 rounded text-black" type="text" name="name" placeholder="Nmane">
+        <input class="w-max mb-2 border p-2 rounded  text-black" type="text" name="fullname" placeholder="fullname">
+        <textarea class="w-max mb-5 border p-2 rounded  text-black" name="Bio" placeholder="Bio" id=""></textarea>
+        <a class="py-2 px-4 rounded-md w-max bg-zinc-500" href="/setting">Personal infomation settings</a>
+        <a class="text-blue-900" href="/logout">Switch to Personal account....</a>
+        </form>
+    </div>
+  </div>
+    
+    <!--  -->
+    <%- include('partials/footer')%>

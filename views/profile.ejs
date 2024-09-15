@@ -1,0 +1,49 @@
+<%- include('partials/header')%>
+<!--  -->
+<%- include('partials/nav')%>
+  <!--  -->
+  <div class="w-full h-full bg-green-100 mx-auto flex flex-col p-10 relative">
+    <div class="userdets w-[80%] h-[25vh] flex gap-5 ml-36 mt-10 bg-green-400 border-5 shadow-2xl mt-20">
+      <div class=" profileimg w-[150px] h-[150px]  overflow-hidden mt-8 ml-8  ">
+        <img class="w-full h-full object-cover" src="<%=user.profile%>" alt="">
+</div>
+<div class="userdets gap-10 flex items-center bprder">
+  <h1 class="font-bold text-2xl text-blue-300"><%=user.username%> rajpoot</h1>
+  <h1></h1>
+  <div class="follow flex gap-20 font-bold text-2xl justify-between items-center text-white ">
+    <h1>Posts</h1>
+    <h1>Followers</h1>
+    <h2>Following</h2>
+  
+  </div>
+</div>
+    </div>
+
+    <form action="/users/uploadimg/<%=user._id%>" method="post" enctype="multipart/form-data">
+      <input type="file" name="avatar" placeholder="file dedo">
+      <button>submit</button>
+    </form>
+
+    <div class="allblogs mt-20 ">
+      <h1 class="text-2xl font-bold flex ">All Blogs</h1>
+     <div class="allblog  mt-10 mr-10 p-2 rounded justify-center flex gap-10 ">
+      <%user.blogs.forEach((elm)=>{%>
+
+        <a href="/details/2">
+          <div class="singleblog w-[200px] h-[200px] s bg-green-300 p-2 rounded">
+            <div class="img w-full h-[80%] shadow-5xl ">
+             <img class="w-full h-full object-cover " src="<%=elm.blogImage%>" alt="">
+            </div>
+            <div class="descri">
+             <h1><%=elm.title%></h1>
+          </div>
+           </div>
+        </a>
+     <%})%>
+
+     </div>
+    </div>
+    <a href="">logout</a>
+</div>
+
+  <%- include('partials/footer')%>
